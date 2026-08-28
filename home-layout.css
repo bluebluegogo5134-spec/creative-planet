@@ -1,0 +1,37 @@
+/* Home page geometry only. Visual tokens live in theme.css; hero illustration composition lives in hero.css. */
+#home.page.active{
+  display:block;
+  overflow-y:auto;
+  overscroll-behavior-y:contain;
+  -webkit-overflow-scrolling:touch;
+  scrollbar-width:none;
+}
+#home.page.active::-webkit-scrollbar{display:none}
+#home .content{
+  display:grid;
+  grid-template-rows:118px 200px 70px 112px;
+  gap:10px;
+  padding:10px 12px 18px;
+  min-height:auto;
+  flex:none;
+}
+#home .homeTop,
+#home .currentCard,
+#home .leaveCard,
+#home .weekCard{
+  min-height:0;
+  height:auto;
+  flex:none;
+}
+#home .homeTop{padding:12px 14px}
+#home .currentCard{padding:12px 14px;overflow:visible}
+#home .currentTop{grid-template-columns:minmax(0,1fr) 72px;gap:8px}
+#home .nextLine{margin-top:7px;line-height:1.4;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#home .gate{height:102px;margin-top:9px}
+#home .leaveCard{padding:10px 14px}
+#home .weekCard{padding:10px 12px}
+#home .weekStrip{height:70px;align-items:stretch}
+#home .dayChip{padding:5px 1px;min-width:0}
+@media (display-mode:standalone){
+  #home .content{padding-bottom:14px}
+}
