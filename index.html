@@ -9,16 +9,33 @@
 <meta name="apple-mobile-web-app-title" content="创作星球">
 <link rel="manifest" href="./manifest.webmanifest">
 <link rel="apple-touch-icon" href="./icon-192.png">
-<title>创作星球 · 单屏版</title>
+<title>创作星球</title>
+<link rel="stylesheet" href="./theme.css?v=1">
 <link rel="stylesheet" href="./styles.css?v=3">
+<link rel="stylesheet" href="./hero.css?v=1">
 </head>
 <body>
 <div id="app">
 <section id="home" class="page active">
-  <div class="hero" style="background-image:url('./hero1.jpg')">
-    <div class="heroText">
-      <div class="kicker">创作星球</div>
-      <div class="quoteBox"><span id="homeQuote">慢一点也没关系，但不要离自己的星球太远。</span><button id="editQuote">✎</button></div>
+  <div class="hero homeHero" aria-label="创作星球首页插画">
+    <div class="homeHero-bg"></div>
+    <div class="homeHero-wash"></div>
+    <div class="homeHero-stars" aria-hidden="true">
+      <span class="homeHero-star s1">☆</span>
+      <span class="homeHero-star s2">✦</span>
+      <span class="homeHero-star s3">☆</span>
+      <span class="homeHero-star s4">✦</span>
+      <span class="homeHero-star s5">☆</span>
+    </div>
+    <div class="homeHero-planet" aria-hidden="true">🪐</div>
+    <div class="homeHero-ground" aria-hidden="true"></div>
+    <div class="homeHero-flowerLeft" aria-hidden="true"></div>
+    <div class="homeHero-flowerRight" aria-hidden="true"></div>
+    <div class="homeHero-character" aria-hidden="true"><img src="./hero1.jpg" alt=""></div>
+    <div class="homeHero-rose" aria-hidden="true">🌹</div>
+    <div class="homeHero-copy">
+      <div class="homeHero-label">创作星球</div>
+      <p class="homeHero-quote"><span id="homeQuote">慢一点也没关系，但不要离自己的星球太远</span><button id="editQuote" class="homeHero-edit" aria-label="编辑鼓励语">✎</button></p>
     </div>
   </div>
   <div class="content">
@@ -99,40 +116,10 @@
 </div>
 
 <div id="quoteModal" class="modal"><div class="sheet"><div class="sectionTitle">修改顶部鼓励语</div><textarea id="quoteInput"></textarea><div class="actionRow"><button class="secondary close">取消</button><button id="saveQuote" class="primary">保存</button></div></div></div>
-
-<div id="planModal" class="modal"><div class="sheet">
-  <div id="planTitle" class="sectionTitle">调整计划</div>
-  <div class="formLabel">类型</div><select id="planType"><option>创作</option><option>健身</option><option>自由</option><option>休息</option></select>
-  <div class="row"><div style="flex:1"><div class="formLabel">开始</div><input id="planStart" type="time"></div><div style="flex:1"><div class="formLabel">结束</div><input id="planEnd" type="time"></div></div>
-  <div class="formLabel">是否计入创作节点</div><select id="planNode"><option value="true">是</option><option value="false">否</option></select>
-  <div class="formLabel">备注</div><input id="planNote">
-  <div class="actionRow"><button class="secondary close">取消</button><button id="savePlan" class="primary">保存</button></div>
-</div></div>
-
-<div id="endModal" class="modal"><div class="sheet">
-  <div class="sectionTitle">结束这次创作</div><div class="small">本次时长：<b id="endDuration"></b></div>
-  <div class="formLabel">这次推进了什么？</div><textarea id="endDone"></textarea>
-  <div class="formLabel">下一次从哪里继续？</div><textarea id="endNext"></textarea>
-  <div class="formLabel">进入状态怎么样？</div><div class="moods"><button class="mood" data-mood="很难进去">😵 很难</button><button class="mood" data-mood="慢慢进去了">🙂 慢慢进入</button><button class="mood" data-mood="很沉浸">✦ 很沉浸</button></div>
-  <div class="actionRow"><button class="secondary close">返回</button><button id="saveSession" class="primary">保存记录</button></div>
-</div></div>
-
-<div id="manualModal" class="modal"><div class="sheet">
-  <div class="sectionTitle">手动补录</div>
-  <div class="formLabel">日期</div><input id="manualDate" type="date">
-  <div class="formLabel">项目</div><select id="manualProject"></select>
-  <div class="formLabel">类型</div><select id="manualType"><option>写作</option><option>研究</option><option>剪辑</option><option>拍摄</option><option>采访</option><option>分镜</option><option>阅读输入</option><option>复盘</option><option>健身</option><option>其他</option></select>
-  <div class="formLabel">分钟</div><input id="manualMinutes" type="number" min="1" max="900" value="60">
-  <div class="formLabel">推进了什么</div><textarea id="manualDone"></textarea>
-  <div class="actionRow"><button class="secondary close">取消</button><button id="saveManual" class="primary">保存</button></div>
-</div></div>
-
-<div id="reviewModal" class="modal"><div class="sheet">
-  <div class="sectionTitle">本周复盘</div>
-  <div class="formLabel">这周我做成了什么？</div><textarea id="weekDone"></textarea>
-  <div class="formLabel">下周最重要的一个作品增量</div><textarea id="nextWeekGoal"></textarea>
-  <div class="actionRow"><button class="secondary close">取消</button><button id="saveReview" class="primary">保存</button></div>
-</div></div>
+<div id="planModal" class="modal"><div class="sheet"><div id="planTitle" class="sectionTitle">调整计划</div><div class="formLabel">类型</div><select id="planType"><option>创作</option><option>健身</option><option>自由</option><option>休息</option></select><div class="row"><div style="flex:1"><div class="formLabel">开始</div><input id="planStart" type="time"></div><div style="flex:1"><div class="formLabel">结束</div><input id="planEnd" type="time"></div></div><div class="formLabel">是否计入创作节点</div><select id="planNode"><option value="true">是</option><option value="false">否</option></select><div class="formLabel">备注</div><input id="planNote"><div class="actionRow"><button class="secondary close">取消</button><button id="savePlan" class="primary">保存</button></div></div></div>
+<div id="endModal" class="modal"><div class="sheet"><div class="sectionTitle">结束这次创作</div><div class="small">本次时长：<b id="endDuration"></b></div><div class="formLabel">这次推进了什么？</div><textarea id="endDone"></textarea><div class="formLabel">下一次从哪里继续？</div><textarea id="endNext"></textarea><div class="formLabel">进入状态怎么样？</div><div class="moods"><button class="mood" data-mood="很难进去">😵 很难</button><button class="mood" data-mood="慢慢进去了">🙂 慢慢进入</button><button class="mood" data-mood="很沉浸">✦ 很沉浸</button></div><div class="actionRow"><button class="secondary close">返回</button><button id="saveSession" class="primary">保存记录</button></div></div></div>
+<div id="manualModal" class="modal"><div class="sheet"><div class="sectionTitle">手动补录</div><div class="formLabel">日期</div><input id="manualDate" type="date"><div class="formLabel">项目</div><select id="manualProject"></select><div class="formLabel">类型</div><select id="manualType"><option>写作</option><option>研究</option><option>剪辑</option><option>拍摄</option><option>采访</option><option>分镜</option><option>阅读输入</option><option>复盘</option><option>健身</option><option>其他</option></select><div class="formLabel">分钟</div><input id="manualMinutes" type="number" min="1" max="900" value="60"><div class="formLabel">推进了什么</div><textarea id="manualDone"></textarea><div class="actionRow"><button class="secondary close">取消</button><button id="saveManual" class="primary">保存</button></div></div></div>
+<div id="reviewModal" class="modal"><div class="sheet"><div class="sectionTitle">本周复盘</div><div class="formLabel">这周我做成了什么？</div><textarea id="weekDone"></textarea><div class="formLabel">下周最重要的一个作品增量</div><textarea id="nextWeekGoal"></textarea><div class="actionRow"><button class="secondary close">取消</button><button id="saveReview" class="primary">保存</button></div></div></div>
 <div id="toast" class="toast">已保存</div>
 <script src="./app.js?v=3"></script>
 </body>
