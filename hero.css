@@ -1,0 +1,128 @@
+/* Home Hero：只管布局，不定义全局配色 */
+#home .hero{
+  position:relative;
+  height:220px;
+  flex:0 0 220px;
+  overflow:hidden;
+  border-radius:0 0 24px 24px;
+  background:none;
+  isolation:isolate;
+}
+#home .hero:after{display:none}
+.homeHero-bg{
+  position:absolute;
+  inset:0;
+  z-index:0;
+  background:
+    radial-gradient(circle at 16% 12%,rgba(255,255,255,.82),transparent 24%),
+    radial-gradient(circle at 76% 12%,rgba(220,238,246,.82),transparent 26%),
+    linear-gradient(180deg,var(--paper) 0%,var(--wash-blue) 70%,var(--paper-soft) 100%);
+}
+.homeHero-wash{
+  position:absolute;
+  inset:0;
+  z-index:1;
+  opacity:.58;
+  pointer-events:none;
+  background:
+    radial-gradient(ellipse at 60% 60%,rgba(180,217,234,.35),transparent 38%),
+    radial-gradient(ellipse at 12% 72%,rgba(194,220,235,.28),transparent 28%);
+}
+.homeHero-stars{position:absolute;inset:0;z-index:2;pointer-events:none}
+.homeHero-star{position:absolute;color:var(--gold);font-family:var(--font-art);line-height:1;opacity:.88}
+.homeHero-star.s1{left:7%;top:14%;font-size:18px}.homeHero-star.s2{left:44%;top:9%;font-size:12px}.homeHero-star.s3{right:12%;top:15%;font-size:22px}.homeHero-star.s4{right:35%;top:34%;font-size:11px}.homeHero-star.s5{left:28%;top:42%;font-size:14px}
+.homeHero-planet{position:absolute;right:5%;top:29%;z-index:2;font-size:24px;opacity:.72;transform:rotate(-8deg)}
+.homeHero-copy{
+  position:absolute;
+  left:18px;
+  top:max(34px,calc(env(safe-area-inset-top) + 10px));
+  width:58%;
+  z-index:7;
+}
+.homeHero-label{font-size:11px;letter-spacing:.18em;color:var(--ink-soft);margin-bottom:8px}
+.homeHero-quote{
+  position:relative;
+  margin:0;
+  color:var(--ink);
+  font-family:var(--font-art);
+  font-size:20px;
+  line-height:1.58;
+  font-weight:500;
+  text-shadow:0 1px 0 rgba(255,255,255,.75);
+}
+.homeHero-edit{
+  position:absolute;
+  right:-2px;
+  bottom:-4px;
+  width:28px;
+  height:28px;
+  border:0;
+  border-radius:50%;
+  background:rgba(255,253,247,.72);
+  color:var(--ink-soft);
+  font-size:15px;
+  display:grid;
+  place-items:center;
+}
+.homeHero-character{
+  position:absolute;
+  right:2%;
+  bottom:21px;
+  width:44%;
+  height:145px;
+  z-index:5;
+  pointer-events:none;
+  overflow:hidden;
+}
+.homeHero-character img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:71% 72%;
+  border-radius:46% 46% 20% 20%;
+  mix-blend-mode:multiply;
+  opacity:.9;
+}
+.homeHero-rose{
+  position:absolute;
+  right:40%;
+  bottom:26px;
+  z-index:6;
+  width:38px;
+  height:55px;
+  border:1.5px solid rgba(78,117,145,.55);
+  border-radius:19px 19px 9px 9px;
+  background:linear-gradient(180deg,rgba(255,255,255,.42),rgba(255,255,255,.12));
+  display:grid;
+  place-items:center;
+  font-size:23px;
+  box-shadow:inset 0 0 10px rgba(190,220,232,.25);
+}
+.homeHero-flowerLeft,.homeHero-flowerRight{
+  position:absolute;
+  z-index:4;
+  bottom:0;
+  height:66px;
+  width:30%;
+  pointer-events:none;
+  opacity:.86;
+  background-repeat:no-repeat;
+}
+.homeHero-flowerLeft{left:-2%;background:radial-gradient(circle at 18% 68%,#e8a7b6 0 5px,transparent 6px),radial-gradient(circle at 43% 52%,#a9a3d3 0 4px,transparent 5px),radial-gradient(circle at 68% 74%,#efc36f 0 4px,transparent 5px)}
+.homeHero-flowerRight{right:-3%;background:radial-gradient(circle at 20% 62%,#e6a4b6 0 5px,transparent 6px),radial-gradient(circle at 50% 76%,#a4a0d1 0 4px,transparent 5px),radial-gradient(circle at 78% 48%,#efc36f 0 4px,transparent 5px)}
+.homeHero-ground{
+  position:absolute;
+  left:18%;
+  right:1%;
+  bottom:-36px;
+  height:105px;
+  z-index:3;
+  border-radius:50% 50% 0 0;
+  background:radial-gradient(ellipse at 50% 20%,rgba(239,232,194,.92),rgba(218,228,206,.72) 52%,rgba(207,226,214,.34) 74%,transparent 76%);
+}
+@media(max-height:780px){
+  #home .hero{height:198px;flex-basis:198px}
+  .homeHero-copy{top:max(28px,calc(env(safe-area-inset-top) + 7px))}
+  .homeHero-quote{font-size:18px;line-height:1.5}
+  .homeHero-character{height:132px;bottom:16px}
+}
