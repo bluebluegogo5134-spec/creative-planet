@@ -1,29 +1,31 @@
 /* Home Hero：仅控制首页头图的布局与图层位置，不负责全局配色 */
 #home .hero{
   position:relative;
-  height:232px;
-  flex:0 0 232px;
+  height:252px;
+  flex:0 0 252px;
   overflow:hidden;
   border-radius:0 0 24px 24px;
   background:none;
   isolation:isolate;
 }
 #home .hero:after{display:none}
-.homeHero-bg{position:absolute;inset:0;z-index:0;background:linear-gradient(180deg,var(--paper) 0%,var(--wash-blue) 72%,var(--paper-soft) 100%)}
-.homeHero-wash{position:absolute;inset:0;z-index:1;opacity:.58;pointer-events:none;background:radial-gradient(circle at 14% 14%,rgba(255,255,255,.86),transparent 28%),radial-gradient(ellipse at 74% 20%,rgba(201,228,240,.52),transparent 32%),radial-gradient(ellipse at 48% 72%,rgba(202,226,236,.30),transparent 44%)}
-.homeHero-stars{position:absolute;inset:0;z-index:2;pointer-events:none}
-.homeHero-star{position:absolute;color:var(--gold);font-family:var(--font-art);line-height:1;opacity:.85}
-.homeHero-star.s1{left:8%;top:15%;font-size:17px}.homeHero-star.s2{left:43%;top:10%;font-size:10px}.homeHero-star.s3{right:11%;top:14%;font-size:21px}.homeHero-star.s4{right:34%;top:34%;font-size:10px}.homeHero-star.s5{left:29%;top:43%;font-size:13px}
-.homeHero-planet{position:absolute;right:6%;top:27%;z-index:2;font-size:22px;opacity:.66;transform:rotate(-8deg)}
-.homeHero-copy{position:absolute;left:18px;top:max(36px,calc(env(safe-area-inset-top) + 12px));width:56%;z-index:7}
-.homeHero-label{font-size:11px;letter-spacing:.18em;color:var(--ink-soft);margin-bottom:8px}
-.homeHero-quote{position:relative;margin:0;color:var(--ink);font-family:var(--font-art);font-size:19px;line-height:1.58;font-weight:500;text-shadow:0 1px 0 rgba(255,255,255,.75)}
-.homeHero-edit{position:absolute;right:-2px;bottom:-5px;width:27px;height:27px;border:0;border-radius:50%;background:rgba(255,253,247,.76);color:var(--ink-soft);font-size:14px;display:grid;place-items:center}
-.homeHero-character{position:absolute;right:0;bottom:17px;width:48%;height:160px;z-index:5;pointer-events:none;overflow:hidden;-webkit-mask-image:radial-gradient(ellipse 74% 84% at 62% 54%,#000 56%,rgba(0,0,0,.82) 72%,transparent 100%);mask-image:radial-gradient(ellipse 74% 84% at 62% 54%,#000 56%,rgba(0,0,0,.82) 72%,transparent 100%)}
-.homeHero-character img{width:100%;height:100%;object-fit:cover;object-position:57% 58%;opacity:.78;mix-blend-mode:multiply;filter:saturate(.82) brightness(1.18)}
-.homeHero-rose{position:absolute;right:40%;bottom:28px;z-index:6;width:36px;height:52px;border:1.5px solid rgba(78,117,145,.45);border-radius:18px 18px 9px 9px;background:linear-gradient(180deg,rgba(255,255,255,.44),rgba(255,255,255,.10));display:grid;place-items:center;font-size:21px;box-shadow:inset 0 0 10px rgba(190,220,232,.25)}
-.homeHero-flowerLeft,.homeHero-flowerRight{position:absolute;z-index:4;bottom:0;height:63px;width:30%;pointer-events:none;opacity:.78;background-repeat:no-repeat}
-.homeHero-flowerLeft{left:-2%;background:radial-gradient(circle at 18% 68%,#e8a7b6 0 5px,transparent 6px),radial-gradient(circle at 43% 52%,#a9a3d3 0 4px,transparent 5px),radial-gradient(circle at 68% 74%,#efc36f 0 4px,transparent 5px)}
-.homeHero-flowerRight{right:-3%;background:radial-gradient(circle at 20% 62%,#e6a4b6 0 5px,transparent 6px),radial-gradient(circle at 50% 76%,#a4a0d1 0 4px,transparent 5px),radial-gradient(circle at 78% 48%,#efc36f 0 4px,transparent 5px)}
-.homeHero-ground{position:absolute;left:18%;right:1%;bottom:-35px;height:108px;z-index:3;border-radius:50% 50% 0 0;background:radial-gradient(ellipse at 50% 20%,rgba(239,232,194,.88),rgba(218,228,206,.68) 52%,rgba(207,226,214,.30) 74%,transparent 76%)}
-@media(max-width:390px){#home .hero{height:220px;flex-basis:220px}.homeHero-quote{font-size:18px}.homeHero-character{height:150px;width:47%}}
+.homeHero-bg{position:absolute;inset:0;z-index:0;background:linear-gradient(180deg,var(--paper) 0%,#f8fbf7 38%,var(--wash-blue) 78%,var(--paper-soft) 100%)}
+.homeHero-wash{position:absolute;inset:0;z-index:1;opacity:.65;pointer-events:none;background:radial-gradient(circle at 15% 10%,rgba(255,255,255,.92),transparent 30%),radial-gradient(ellipse at 74% 18%,rgba(218,238,246,.64),transparent 34%),radial-gradient(ellipse at 48% 75%,rgba(206,229,237,.34),transparent 46%)}
+.homeHero-stars{position:absolute;inset:0;z-index:3;pointer-events:none}
+.homeHero-star{position:absolute;color:var(--gold);font-family:var(--font-art);line-height:1;opacity:.78}
+.homeHero-star.s1{left:7%;top:17%;font-size:17px}.homeHero-star.s2{left:44%;top:11%;font-size:10px}.homeHero-star.s3{right:10%;top:13%;font-size:22px}.homeHero-star.s4{right:32%;top:31%;font-size:10px}.homeHero-star.s5{left:28%;top:45%;font-size:13px}
+.homeHero-planet{position:absolute;right:9%;top:22%;z-index:4;font-size:22px;opacity:.48;transform:rotate(-8deg)}
+.homeHero-copy{position:absolute;left:20px;top:max(44px,calc(env(safe-area-inset-top) + 18px));width:51%;z-index:8}
+.homeHero-label{font-size:10px;letter-spacing:.18em;color:var(--ink-soft);margin-bottom:10px}
+.homeHero-quote{position:relative;margin:0;color:var(--ink);font-family:var(--font-art);font-size:18px;line-height:1.64;font-weight:500;text-shadow:0 1px 0 rgba(255,255,255,.8)}
+.homeHero-edit{position:absolute;right:-1px;bottom:-7px;width:26px;height:26px;border:0;border-radius:50%;background:rgba(255,253,247,.72);color:var(--ink-soft);font-size:13px;display:grid;place-items:center}
+/* 独立插画层：透明渐隐 SVG 覆盖在右半区域；HTML 文案和装饰仍完全独立 */
+.homeHero-character{position:absolute;inset:0;z-index:5;pointer-events:none;background:url('./home-hero-art.svg') center/100% 100% no-repeat;overflow:visible}
+.homeHero-character img{display:none}
+/* 玫瑰已经包含在插画层，保留 DOM 但隐藏，后续可换成独立 PNG */
+.homeHero-rose{display:none}
+.homeHero-flowerLeft,.homeHero-flowerRight{position:absolute;z-index:6;bottom:2px;height:58px;width:24%;pointer-events:none;opacity:.50;background-repeat:no-repeat}
+.homeHero-flowerLeft{left:-2%;background:radial-gradient(circle at 18% 68%,#e8a7b6 0 4px,transparent 5px),radial-gradient(circle at 43% 52%,#a9a3d3 0 4px,transparent 5px),radial-gradient(circle at 68% 74%,#efc36f 0 4px,transparent 5px)}
+.homeHero-flowerRight{right:-3%;background:radial-gradient(circle at 20% 62%,#e6a4b6 0 4px,transparent 5px),radial-gradient(circle at 50% 76%,#a4a0d1 0 4px,transparent 5px),radial-gradient(circle at 78% 48%,#efc36f 0 4px,transparent 5px)}
+.homeHero-ground{position:absolute;left:16%;right:0;bottom:-42px;height:112px;z-index:2;border-radius:50% 50% 0 0;background:radial-gradient(ellipse at 50% 20%,rgba(239,232,194,.72),rgba(218,228,206,.52) 52%,rgba(207,226,214,.18) 74%,transparent 77%)}
+@media(max-width:390px){#home .hero{height:244px;flex-basis:244px}.homeHero-copy{width:52%}.homeHero-quote{font-size:17px}}
