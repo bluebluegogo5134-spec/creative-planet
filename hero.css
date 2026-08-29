@@ -2,18 +2,17 @@
 #home .hero.homeHero{
   position:relative;
   width:100%;
-  height:auto;
   aspect-ratio:30 / 19;
-  min-height:232px;
-  max-height:268px;
+  height:auto;
+  min-height:0;
+  max-height:none;
   flex:0 0 auto;
   overflow:hidden;
   border-radius:0 0 24px 24px;
-  background:#f7f5eb;
+  background:#f8f3e7;
   isolation:isolate;
 }
 #home .hero.homeHero:after{display:none}
-
 .homeHero-art{
   position:absolute;
   inset:0;
@@ -25,19 +24,17 @@
   object-position:center;
   border:0;
 }
-
-/* 左侧约 42% 为文案安全区；插画本身负责所有绘画元素。 */
 .homeHero-copy{
   position:absolute;
   z-index:1;
-  left:clamp(18px,5.1vw,22px);
-  top:max(42px,calc(env(safe-area-inset-top) + 17px));
-  width:46%;
-  max-width:188px;
+  left:clamp(18px,5vw,21px);
+  top:max(43px,calc(env(safe-area-inset-top) + 17px));
+  width:53%;
   color:var(--ink);
+  pointer-events:none;
 }
 .homeHero-label{
-  margin:0 0 10px;
+  margin:0 0 11px;
   color:var(--ink-soft);
   font-size:11px;
   line-height:1.2;
@@ -45,45 +42,47 @@
 }
 .homeHero-quote{
   position:relative;
+  display:inline-block;
   margin:0;
   color:var(--ink);
   font-family:var(--font-art);
-  font-size:18px;
-  font-weight:500;
+  font-size:17px;
+  font-weight:600;
   line-height:1.62;
-  letter-spacing:.01em;
-  text-shadow:0 1px 0 rgba(255,255,255,.82);
+  letter-spacing:-.02em;
+  white-space:nowrap;
+  text-shadow:0 1px 0 rgba(255,255,255,.84);
+  pointer-events:auto;
 }
 .homeHero-edit{
   position:absolute;
-  right:-2px;
-  bottom:-7px;
+  left:calc(100% + 5px);
+  bottom:1px;
   display:grid;
   place-items:center;
-  width:27px;
-  height:27px;
+  width:25px;
+  height:25px;
   padding:0;
   border:1px solid rgba(88,107,126,.10);
   border-radius:50%;
-  background:rgba(255,253,247,.78);
+  background:rgba(255,253,247,.80);
   color:var(--ink-soft);
-  font-size:13px;
+  font-size:12px;
   line-height:1;
   box-shadow:0 2px 8px rgba(57,73,89,.05);
 }
 .homeHero-edit:active{transform:scale(.96)}
-
-@media(max-width:390px){
-  #home .hero.homeHero{min-height:232px}
-  .homeHero-copy{left:18px;top:max(40px,calc(env(safe-area-inset-top) + 16px));width:47%}
+@media(max-width:375px){
+  .homeHero-copy{left:17px;top:max(40px,calc(env(safe-area-inset-top) + 15px));width:55%}
   .homeHero-label{font-size:10px;margin-bottom:9px}
-  .homeHero-quote{font-size:17px;line-height:1.62}
+  .homeHero-quote{font-size:15.5px;line-height:1.62}
+  .homeHero-edit{width:23px;height:23px;font-size:11px;left:calc(100% + 3px)}
 }
-
+@media(min-width:376px) and (max-width:390px){
+  .homeHero-copy{left:18px;top:max(41px,calc(env(safe-area-inset-top) + 16px));width:54%}
+  .homeHero-quote{font-size:16px}
+}
 @media(min-width:391px) and (max-width:402px){
-  .homeHero-copy{width:46%}
-}
-
-@media(min-width:403px){
-  #home .hero.homeHero{max-height:276px}
+  .homeHero-copy{width:53%}
+  .homeHero-quote{font-size:16.5px}
 }
